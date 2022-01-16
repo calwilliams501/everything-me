@@ -1,0 +1,38 @@
+#intro {
+    position: relative;
+    vertical-align: 50vw;
+    width: 50vw;
+    height: auto;
+    margin: auto;
+}
+#intro-inner {
+    position: static;
+    margin: auto;
+    width: 50%;
+}
+#sd-text-container {
+    position: relative;
+    margin: auto;
+    width: 50%;
+}
+#sd-text-hidden {
+    position: absolute;
+    display: inline;
+    left: -100vw;
+    text-align: center;
+    
+}
+#sd-text-visible {
+    position: absolute;
+    display: inline;
+    text-align: center;
+    overflow: auto;
+}
+.intro {
+    display: inline-flexbox;
+    margin: auto;
+    overflow: auto;
+}
+.sd-text-moving {
+    transition: transform 1s ease-in-out;
+}

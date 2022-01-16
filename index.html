@@ -1,0 +1,50 @@
+<?php
+
+	if (session_status() !== PHP_SESSION_ACTIVE) session_start();
+
+	if (!isset($_SESSION["loggedIn"]) || !$_SESSION["loggedIn"]) {
+
+		header("Location: /");
+		exit();
+
+	}
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		
+		<title>Callum A. Williams</title>
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="shortcut icon" type="image/jpg" href="a-egg.jpg">
+
+		<link rel="stylesheet" href="style.css">
+
+		<script defer src="main.js"></script>
+
+	</head>
+
+	<body>
+
+		<div id="intro">
+			<div id='intro-inner'>
+				<img class='intro' id="intro-img" src="a-egg.jpg" alt="a-egg" style="height: 10vh;"/>
+				<h3 class='intro'>Hello, I'm</h3>
+				<h1 class='intro'>Callum A. Williams,<br> </h1>
+				<h3 class='intro'>a</h3>
+
+				<div id="sd-text-container">
+					<h2 class="sd-text-moving" id="sd-text-visible" >Software Developer</h2>	
+		
+					<h2 class="sd-text-moving" id="sd-text-hidden">softwareDeveloper</h2>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>
