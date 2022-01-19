@@ -53,6 +53,7 @@ function moveSDText() {
 
     sdText.hidden.style.transform = 'translateX(100vw)';
     sdText.visible.style.transform = 'translateX(100vw)';
+    // sdText.visible.style.opacity = 0;
 
 }
 
