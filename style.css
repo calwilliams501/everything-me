@@ -1,8 +1,11 @@
 #body {
     background-color: #47305b;
+    height: 100vh;
+    overflow: hidden;
+    width: 100vw
 }
 #nav-bar {
-    position: absolute;
+    position: fixed;
     height: 100vw;
     width: 10vw;
     left: 0;
@@ -28,12 +31,6 @@
     height: auto;
     margin: auto;
     color: #E3DAE7;
-}
-#intro-inner {
-    position: static;
-    margin: auto;
-    width: 100%;
-    height: 100%;
 }
 #sd-text-container {
     position: relative;
