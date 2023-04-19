@@ -24,18 +24,27 @@ const sdString = [
 
 document.body.onload = () => init();
 
-nav.home.onclick = () => window.scroll({
-    top: 0,
-    behavior: 'smooth'
-})
-nav.about.onclick = () => window.scrollBy({
-    top: window.innerHeight,
-    behavior: 'smooth'
-})
-nav.contact.onclick = () => window.scrollBy({
-    top: window.innerHeight * 2,
-    behavior: 'smooth'
-})
+nav.home.onclick = () => {
+    window.scroll({
+        top: 0,
+        behavior: 'smooth'
+    });
+    setActiveButton(nav.home);
+};
+nav.about.onclick = () => {
+    window.scrollTo({
+        top: window.innerHeight,
+        behavior: 'smooth'
+    });
+    setActiveButton(nav.about);
+};
+nav.contact.onclick = () => {
+    window.scrollTo({
+        top: window.innerHeight * 2,
+        behavior: 'smooth'
+    });
+    setActiveButton(nav.contact);
+};
 
 function init() {
     textRotation();
@@ -71,5 +80,14 @@ function moveSDText() {
     sdText.visible.style.opacity = '0';
     sdText.hidden.style.transform = 'translateX(100vw)';
     sdText.visible.style.transform = 'translateX(100vw)';
+
+}
+
+function setActiveButton(button) {
+
+    Object.values(nav).forEach(it => {
+        it.classList.remove('active')
+    })
+    button.classList.add('active');
 
 }
