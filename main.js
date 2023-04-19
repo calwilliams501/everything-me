@@ -34,6 +34,7 @@ function textRotation() {
         setTimeout(() => {
 
             sdText.visible.textContent = sdString[rotNum];
+            sdText.visible.style.opacity = '1';
             sdText.visible.classList.remove('sd-text-moving');
             sdText.visible.style.transform = 'translateX(0vw)';
             sdText.hidden.classList.remove('sd-text-moving');
@@ -49,6 +50,7 @@ function textRotation() {
 
 function moveSDText() {
 
+    sdText.visible.style.opacity = '0';
     sdText.hidden.style.transform = 'translateX(100vw)';
     sdText.visible.style.transform = 'translateX(100vw)';
 
