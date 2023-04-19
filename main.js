@@ -1,7 +1,12 @@
+const nav = {
+    home: document.getElementById('nav-home'),
+    about: document.getElementById('nav-about'),
+    contact: document.getElementById('nav-contact')
+};
 const sdText = {
     visible: document.getElementById('sd-text-visible'),
     hidden: document.getElementById('sd-text-hidden')
-}
+};
 
 const sdString = [
     'softwaredeveloper',
@@ -18,6 +23,19 @@ const sdString = [
 ];
 
 document.body.onload = () => init();
+
+nav.home.onclick = () => window.scroll({
+    top: 0,
+    behavior: 'smooth'
+})
+nav.about.onclick = () => window.scrollBy({
+    top: window.innerHeight,
+    behavior: 'smooth'
+})
+nav.contact.onclick = () => window.scrollBy({
+    top: window.innerHeight * 2,
+    behavior: 'smooth'
+})
 
 function init() {
     textRotation();
