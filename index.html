@@ -2,13 +2,6 @@
 
 	if (session_status() !== PHP_SESSION_ACTIVE) session_start();
 
-	if (!isset($_SESSION["loggedIn"]) || !$_SESSION["loggedIn"]) {
-
-		header("Location: /");
-		exit();
-
-	}
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,12 +24,15 @@
 	<body>
 
 		<div id="nav-bar">
-			<a href="#">Home</a>
-			<a href="#">About</a>
-			<a href="#">Contact</a>
+			<br>
+			<button id="nav-home" >Home</button>
+			<br>
+			<button id="nav-about" >About</button>
+			<br>
+			<button id="nav-contact" >Contact</button>
 		</div>
 
-		<div class="main-section">
+		<div id="home" class="section">
 
             <div id="img-container"><img src="lazy_me.jpg" alt="lazy_me"/></div>
 
@@ -50,6 +46,18 @@
 				</div>
 				
 			</div>
+
+		</div>
+
+		<div class="section">
+
+			cv goes here
+
+		</div>
+
+		<div class="section">
+
+			contact info goes here
 
 		</div>
 
