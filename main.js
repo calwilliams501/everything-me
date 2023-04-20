@@ -48,8 +48,6 @@ window.onbeforeunload = () => window.scrollTo(0, 0);
 
 Object.values(nav).forEach(it => {
 
-    console.log(it)
-    console.log(it.button)
     it.button.onclick = () => {
         window.scroll({
             top: it.coords,
