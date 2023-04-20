@@ -73,8 +73,6 @@ body {
 
 
 #name {
-    white-space: nowrap;
-    overflow: auto;
     font-size: 50px;
     margin: 0;
     color: var(--lime);
