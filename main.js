@@ -1,6 +1,9 @@
 const nav = {
     home: document.getElementById('nav-home'),
     about: document.getElementById('nav-about'),
+    skills: document.getElementById('nav-skills'),
+    work: document.getElementById('nav-work'),
+    edu: document.getElementById('nav-edu'),
     contact: document.getElementById('nav-contact')
 };
 const sdText = {
@@ -23,6 +26,7 @@ const sdString = [
 ];
 
 document.body.onload = () => init();
+window.onbeforeunload = () => window.scrollTo(0, 0);
 
 nav.home.onclick = () => {
     window.scroll({
@@ -38,9 +42,30 @@ nav.about.onclick = () => {
     });
     setActiveButton(nav.about);
 };
-nav.contact.onclick = () => {
+nav.skills.onclick = () => {
     window.scrollTo({
         top: window.innerHeight * 2,
+        behavior: 'smooth'
+    });
+    setActiveButton(nav.about);
+};
+nav.work.onclick = () => {
+    window.scrollTo({
+        top: window.innerHeight * 3,
+        behavior: 'smooth'
+    });
+    setActiveButton(nav.about);
+};
+nav.edu.onclick = () => {
+    window.scrollTo({
+        top: window.innerHeight * 4,
+        behavior: 'smooth'
+    });
+    setActiveButton(nav.about);
+};
+nav.contact.onclick = () => {
+    window.scrollTo({
+        top: window.innerHeight * 5,
         behavior: 'smooth'
     });
     setActiveButton(nav.contact);
