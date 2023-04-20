@@ -11,7 +11,7 @@ body {
     overflow: hidden;
     background-color: var(--purple);
     color: var(--gray);
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #nav-bar {
@@ -21,7 +21,7 @@ body {
     background-color: var(--gray);
     z-index: 1;
 }
-#nav-bar button {
+#nav-bar a {
     display: block;
     width: 75px;
     text-align: center;
@@ -29,15 +29,18 @@ body {
     padding-bottom: 15px;
     margin: auto;
     text-decoration: none;
-    font-weight: bold;
     color: var(--purple);
     border-radius: 4px;
 }
-#nav-bar button:hover {
+#nav-bar a:hover {
     transform: scale(1.1);
     transition: transform 0.2s ease-in-out;
     cursor: pointer;
     background-color: var(--gray);
+}
+#nav-bar a img {
+    max-height: 30px;
+    max-width: 30px;
 }
 .active {
     background-color: var(--lime) !important;
@@ -74,6 +77,7 @@ body {
 
 #name {
     font-size: 50px;
+    font-weight: bold;
     margin: 0;
     color: var(--lime);
 }
@@ -103,4 +107,14 @@ body {
 }
 .sd-text-moving {
     transition: transform 1s ease-in-out, opacity 0.6s;
+}
+
+@media screen and (min-width: 1000px) {
+    #nav-bar {
+        width: 100px;
+        height: 100vh;
+    }
+    #nav-bar button {
+/*        display: inline;*/
+    }
 }
