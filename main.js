@@ -28,48 +28,17 @@ const sdString = [
 document.body.onload = () => init();
 window.onbeforeunload = () => window.scrollTo(0, 0);
 
-nav.home.onclick = () => {
-    window.scroll({
-        top: 0,
-        behavior: 'smooth'
-    });
-    setActiveButton(nav.home);
-};
-nav.about.onclick = () => {
-    window.scrollTo({
-        top: window.innerHeight,
-        behavior: 'smooth'
-    });
-    setActiveButton(nav.about);
-};
-nav.skills.onclick = () => {
-    window.scrollTo({
-        top: window.innerHeight * 2,
-        behavior: 'smooth'
-    });
-    setActiveButton(nav.skills);
-};
-nav.work.onclick = () => {
-    window.scrollTo({
-        top: window.innerHeight * 3,
-        behavior: 'smooth'
-    });
-    setActiveButton(nav.work);
-};
-nav.edu.onclick = () => {
-    window.scrollTo({
-        top: window.innerHeight * 4,
-        behavior: 'smooth'
-    });
-    setActiveButton(nav.edu);
-};
-nav.contact.onclick = () => {
-    window.scrollTo({
-        top: window.innerHeight * 5,
-        behavior: 'smooth'
-    });
-    setActiveButton(nav.contact);
-};
+Object.values(nav).forEach(it => {
+
+    it.onclick = () => {
+        window.scroll({
+            top: 0,
+            behavior: 'smooth'
+        });
+        setActiveButton(it);
+    };
+
+})
 
 function init() {
     textRotation();
