@@ -47,21 +47,21 @@ nav.skills.onclick = () => {
         top: window.innerHeight * 2,
         behavior: 'smooth'
     });
-    setActiveButton(nav.about);
+    setActiveButton(nav.skills);
 };
 nav.work.onclick = () => {
     window.scrollTo({
         top: window.innerHeight * 3,
         behavior: 'smooth'
     });
-    setActiveButton(nav.about);
+    setActiveButton(nav.work);
 };
 nav.edu.onclick = () => {
     window.scrollTo({
         top: window.innerHeight * 4,
         behavior: 'smooth'
     });
-    setActiveButton(nav.about);
+    setActiveButton(nav.edu);
 };
 nav.contact.onclick = () => {
     window.scrollTo({
