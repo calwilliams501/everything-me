@@ -1,10 +1,28 @@
 const nav = {
-    home: document.getElementById('nav-home'),
-    about: document.getElementById('nav-about'),
-    skills: document.getElementById('nav-skills'),
-    work: document.getElementById('nav-work'),
-    edu: document.getElementById('nav-edu'),
-    contact: document.getElementById('nav-contact')
+    home: {
+        button: document.getElementById('nav-home'),
+        coords: 0
+    },
+    about: {
+        button: document.getElementById('nav-about'),
+        coords: window.innerHeight
+    },
+    skills: {
+        button: document.getElementById('nav-skills'),
+        coords: window.innerHeight * 2
+    },
+    work: {
+        button: document.getElementById('nav-work'),
+        coords: window.innerHeight * 3
+    },
+    edu: {
+        button: document.getElementById('nav-edu'),
+        coords: window.innerHeight * 4
+    },
+    contact: {
+        button: document.getElementById('nav-contact'),
+        coords: window.innerHeight * 5
+    }
 };
 const sdText = {
     visible: document.getElementById('sd-text-visible'),
@@ -30,12 +48,14 @@ window.onbeforeunload = () => window.scrollTo(0, 0);
 
 Object.values(nav).forEach(it => {
 
-    it.onclick = () => {
+    console.log(it)
+    console.log(it.button)
+    it.button.onclick = () => {
         window.scroll({
-            top: 0,
+            top: it.coords,
             behavior: 'smooth'
         });
-        setActiveButton(it);
+        setActiveButton(it.button);
     };
 
 })
@@ -80,7 +100,7 @@ function moveSDText() {
 function setActiveButton(button) {
 
     Object.values(nav).forEach(it => {
-        it.classList.remove('active')
+        it.button.classList.remove('active')
     })
     button.classList.add('active');
 
