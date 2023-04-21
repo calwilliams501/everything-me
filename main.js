@@ -44,16 +44,23 @@ const sdString = [
 ];
 
 document.body.onload = () => init();
-window.onbeforeunload = () => window.scrollTo(0, 0);
+window.onbeforeunload = () => {
+    window.scrollTo(0, 0)
 
-Object.values(nav).forEach(it => {
+    Object.values(document.getElementsByClassName('section')).forEach(section => {
+        section.scrollTo(0, 0)
+    })
 
-    it.button.onclick = () => {
+};
+
+Object.values(nav).forEach(navElem => {
+
+    navElem.button.onclick = () => {
         window.scroll({
-            top: it.coords,
+            top: navElem.coords,
             behavior: 'smooth'
         });
-        setActiveButton(it.button);
+        setActiveButton(navElem.button);
     };
 
 })

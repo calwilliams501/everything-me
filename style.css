@@ -1,6 +1,8 @@
 :root {
     --purple: #47305B;
     --gray: #CDCDCD;
+    --gray: #CDCDCD;
+
     --lime: #CBFF4D;
 }
 body {
@@ -53,6 +55,8 @@ body {
     height: 100vh;
     width: calc(100% - 100px);
     margin-left: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 #img-container {
     position: absolute;
@@ -77,8 +81,6 @@ body {
 
 #name {
     margin: auto;
-}
-.section h1 {
     font-size: 50px;
     font-weight: bold;
     color: var(--lime);
@@ -112,22 +114,31 @@ body {
 
 .title {
     position: absolute;
-    margin-left: 64px;
+    margin: 8px 0 0 64px;
+    width: 100%;
+    background-color: var(--purple);
+    box-shadow: 0 16px 16px 0 var(--purple);
+    vertical-align: text-bottom;
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--lime);
 }
 #about-me-container {
-    padding-top: 100px;
-    margin: auto;
-    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 64px 64px 0 64px;
 }
-#about-me-container div {
-    display: inline-block;
-    max-width: 45%;
-    font-size: 1.5vw;
+.box {
+    flex-basis: 49%;
+    box-sizing: border-box;
+    padding: 64px 64px 0 64px;
+}
+.box p {
+    font-size: 1.6vw;
 }
 #about-me-container h2 {
-    display: inline-block;
-    width: calc(50% - 8px);
-    color: #CBFF4D;
+    color: var(--lime);
 }
 @media screen {
     @media (max-width: 1000px) {
@@ -155,15 +166,14 @@ body {
             margin-left: 0;
         }
 
-        #about-me-container div {
-            max-width: 100%;
+        #about-me-container {
+            flex-direction: column;
+        }
+        .box {
+            flex-basis: 100%;
+            padding: 0;
         }
 
-    }
-    @media (min-width: 1000px) {
-        #about-me-container div:last-child {
-            float: right;
-        }
     }
 
 }
