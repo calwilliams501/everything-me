@@ -137,7 +137,7 @@ body {
 .box p {
     font-size: 1.6vw;
 }
-#about-me-container h2 {
+.box h2 {
     color: var(--lime);
 }
 @media screen {
