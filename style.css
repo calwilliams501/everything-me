@@ -1,13 +1,10 @@
 :root {
     --purple: #47305B;
     --gray: #CDCDCD;
-    --gray: #CDCDCD;
-
     --lime: #CBFF4D;
 }
 body {
-    margin: 0;
-    padding: 0;
+    margin: auto;
     height: 100%;
     width: 100vw;
     overflow: hidden;
@@ -52,6 +49,7 @@ body {
 }
 
 .section {
+    position: relative;
     height: 100vh;
     width: calc(100% - 100px);
     margin-left: 100px;
@@ -63,10 +61,12 @@ body {
     height: 100vh;
     right: 0;
 }
+#img-container img {
+    height: 100%;
+}
 .section img {
     position: relative;
     float: right;
-    height: 100%;
     object-fit: cover;
 }
 #img-container:after {
@@ -114,7 +114,7 @@ body {
 
 .title {
     position: absolute;
-    margin: 8px 0 0 64px;
+    margin: 32px 0 0 64px;
     width: 100%;
     background-color: var(--purple);
     box-shadow: 0 16px 16px 0 var(--purple);
@@ -129,8 +129,10 @@ body {
     justify-content: space-between;
     padding: 64px 64px 0 64px;
 }
-.box {
+.flex-box {
     flex-basis: 49%;
+}
+.box {
     box-sizing: border-box;
     padding: 64px 64px 0 64px;
 }
@@ -140,6 +142,41 @@ body {
 .box h2 {
     color: var(--lime);
 }
+
+.sliding-box {
+    position: absolute;
+    left: 100vw;
+    width: calc(100% - 128px);
+    margin-top: 64px;
+}
+.sliding-box h4 {
+    color: var(--lime);
+    text-align: center;
+}
+.sliding-box--active {
+    left: 64px;
+}
+.work-button {
+    position: absolute;
+    padding: 40px;
+    top: calc(50% - 50px);
+}
+.work-button img:hover {
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+.work-button img {
+    height: 50px;
+    width: 50px;
+}
+#work-previous {
+    left: 0;
+}
+#work-next {
+    right: 0
+}
+
 @media screen {
     @media (max-width: 1000px) {
         #nav-bar {
@@ -171,7 +208,14 @@ body {
         }
         .box {
             flex-basis: 100%;
-            padding: 0;
+            padding-top: 32px;
+        }
+        .sliding-box {
+            position: static;
+            margin: 64px 64px 0 64px;
+        }
+        .work-button {
+            display: none;
         }
 
     }
