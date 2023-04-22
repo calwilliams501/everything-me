@@ -158,8 +158,18 @@ body {
 }
 .work-button {
     position: absolute;
-    padding: 40px;
+    margin: 40px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
     top: calc(50% - 50px);
+}
+.work-button:disabled {
+    opacity: 0.2;
+}
+.work-button:disabled img:hover {
+    transform: none;
+    cursor: default;
 }
 .work-button img:hover {
     transform: scale(1.2);
