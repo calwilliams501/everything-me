@@ -142,9 +142,15 @@ function setActiveNavButton(button) {
 
 function previousBox(box) {
 
+    const boxIndex = Object.values(boxes.work).indexOf(box) - 1;
+
     box.classList.remove('sliding-box--active');
 
-    Object.values(boxes.work)[Object.values(boxes.work).indexOf(box) - 1].classList.add('sliding-box--active')
+    Object.values(boxes.work).forEach(it => {
+        if (Object.values(boxes.work).indexOf(it) > boxIndex) it.classList.remove('sliding-box--left');
+    })
+
+    Object.values(boxes.work)[boxIndex].classList.add('sliding-box--active')
 
     setWorkButtons()
 
@@ -152,9 +158,15 @@ function previousBox(box) {
 
 function nextBox(box) {
 
+    const boxIndex = Object.values(boxes.work).indexOf(box) + 1;
+
     box.classList.remove('sliding-box--active');
 
-    Object.values(boxes.work)[Object.values(boxes.work).indexOf(box) + 1].classList.add('sliding-box--active')
+    Object.values(boxes.work).forEach(it => {
+        if (Object.values(boxes.work).indexOf(it) < boxIndex) it.classList.add('sliding-box--left');
+    })
+
+    Object.values(boxes.work)[boxIndex].classList.add('sliding-box--active')
 
     setWorkButtons()
 

@@ -148,10 +148,14 @@ body {
     left: 100vw;
     width: calc(100% - 128px);
     margin-top: 64px;
+    transition: left 0.2s ease-in-out;
 }
 .sliding-box h4 {
     color: var(--lime);
     text-align: center;
+}
+.sliding-box--left {
+    left: calc(-100vw - 64px)
 }
 .sliding-box--active {
     left: 64px;
