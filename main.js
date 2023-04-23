@@ -49,10 +49,8 @@ const workButtons = {
 const boxes = {
     work: {
         grange: document.getElementById('grange'),
-        costa:  document.getElementById('costa'),
-        roadchef:  document.getElementById('roadchef'),
-        burgerKing:  document.getElementById('burger-king'),
-        tkMaxx:  document.getElementById('tk-maxx')
+        costas:  document.getElementById('costas'),
+        other:  document.getElementById('other')
     }
 }
 
@@ -174,7 +172,7 @@ function nextBox(box) {
 
 function setWorkButtons() {
 
-    workButtons.previous.disabled = boxes.work.grange.classList.contains('sliding-box--active');
-    workButtons.next.disabled = boxes.work.tkMaxx.classList.contains('sliding-box--active');
+    workButtons.previous.disabled = Object.values(boxes.work)[0].classList.contains('sliding-box--active');
+    workButtons.next.disabled = Object.values(boxes.work)[Object.values(boxes.work).length - 1].classList.contains('sliding-box--active');
 
 }
