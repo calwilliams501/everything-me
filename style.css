@@ -123,10 +123,10 @@ body {
     font-weight: bold;
     color: var(--lime);
 }
-#about-me-container {
+.container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 64px 64px 0 64px;
 }
 .flex-box {
@@ -141,15 +141,16 @@ body {
 }
 .box h2 {
     color: var(--lime);
+    text-align: center;
+}
+.box h4 {
+    color: var(--lime);
+    text-align: center;
 }
 
 #costas {
     display: flex;
     justify-content: space-around;
-}
-#other div {
-    width: calc(50% - 128px);
-    margin: auto;
 }
 #costas div {
     position: relative;
@@ -171,13 +172,6 @@ body {
     margin: auto;
     padding-top: 16px;
 }
-.sliding-box h2 {
-    text-align: center;
-}
-.sliding-box h4 {
-    color: var(--lime);
-    text-align: center;
-}
 .sliding-box--left {
     left: calc(-100vw - 64px)
 }
@@ -185,10 +179,31 @@ body {
     left: 64px;
 }
 
-#other div h3,
-#other div h4 {
+.list div {
+    width: calc(50% - 128px);
+    margin: auto;
+}
+.list div h3,
+.list div h4 {
     display: inline-block;
 }
+.list div h5 {
+    margin: 0 0 64px 0;
+    color: var(--lime);
+}
+.flex-list {
+    display: flex;
+    width: 100% !important;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+.flex-list div {
+    text-align: center;
+}
+.wide-list div{
+    width: 100%;
+}
+
 
 .work-button {
     position: absolute;
