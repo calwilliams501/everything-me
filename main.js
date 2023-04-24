@@ -42,17 +42,6 @@ const sdString = [
     'Software-Developer',
     'Software Developer'
 ];
-const workButtons = {
-    previous: document.getElementById('work-previous'),
-    next: document.getElementById('work-next')
-}
-const boxes = {
-    work: {
-        grange: document.getElementById('grange'),
-        costas:  document.getElementById('costas'),
-        other:  document.getElementById('other')
-    }
-}
 
 document.body.onload = () => init();
 window.onbeforeunload = () => {
@@ -76,24 +65,8 @@ Object.values(nav).forEach(navElem => {
 
 })
 
-workButtons.previous.onclick = () => {
-    Object.values(document.getElementsByClassName('sliding-box--active')).forEach(box => {
-
-        if (box.classList.contains('sliding-box--active')) return previousBox(box)
-
-    })
-};
-workButtons.next.onclick = () => {
-    Object.values(document.getElementsByClassName('sliding-box--active')).forEach(box => {
-
-        if (box.classList.contains('sliding-box--active')) return nextBox(box)
-
-    })
-};
-
 function init() {
     textRotation();
-    setWorkButtons()
 }
 
 function textRotation() {
@@ -135,44 +108,5 @@ function setActiveNavButton(button) {
         it.button.classList.remove('active')
     })
     button.classList.add('active');
-
-}
-
-function previousBox(box) {
-
-    const boxIndex = Object.values(boxes.work).indexOf(box) - 1;
-
-    box.classList.remove('sliding-box--active');
-
-    Object.values(boxes.work).forEach(it => {
-        if (Object.values(boxes.work).indexOf(it) > boxIndex) it.classList.remove('sliding-box--left');
-    })
-
-    Object.values(boxes.work)[boxIndex].classList.add('sliding-box--active')
-
-    setWorkButtons()
-
-}
-
-function nextBox(box) {
-
-    const boxIndex = Object.values(boxes.work).indexOf(box) + 1;
-
-    box.classList.remove('sliding-box--active');
-
-    Object.values(boxes.work).forEach(it => {
-        if (Object.values(boxes.work).indexOf(it) < boxIndex) it.classList.add('sliding-box--left');
-    })
-
-    Object.values(boxes.work)[boxIndex].classList.add('sliding-box--active')
-
-    setWorkButtons()
-
-}
-
-function setWorkButtons() {
-
-    workButtons.previous.disabled = Object.values(boxes.work)[0].classList.contains('sliding-box--active');
-    workButtons.next.disabled = Object.values(boxes.work)[Object.values(boxes.work).length - 1].classList.contains('sliding-box--active');
 
 }

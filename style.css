@@ -13,6 +13,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body p {
+    font-size: 2.5vmin;
+}
 #nav-bar {
     width: 100px;
     height: 100vh;
@@ -50,9 +53,9 @@ body {
 
 .section {
     position: relative;
+    left: 100px;
     height: 100vh;
     width: calc(100% - 100px);
-    margin-left: 100px;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -81,7 +84,7 @@ body {
 
 #name {
     margin: auto;
-    font-size: 50px;
+    font-size: 5vmin;
     font-weight: bold;
     color: var(--lime);
 }
@@ -119,7 +122,7 @@ body {
     background-color: var(--purple);
     box-shadow: 0 16px 16px 0 var(--purple);
     vertical-align: text-bottom;
-    font-size: 50px;
+    font-size: 5vmin;
     font-weight: bold;
     color: var(--lime);
 }
@@ -130,53 +133,39 @@ body {
     padding: 64px 64px 0 64px;
 }
 .flex-box {
-    flex-basis: 49%;
+    width: 800px;
+    margin: auto;
+/*    flex-basis: 49%;*/
 }
 .box {
     box-sizing: border-box;
     padding: 64px 64px 0 64px;
 }
-.box p {
-    font-size: 1vw;
+.box h1 {
+    display: inline-block;
+    color: var(--lime);
 }
 .box h2 {
-    color: var(--lime);
-    text-align: center;
+    display: inline-block;
+    width: fit-content;
+    margin-left: 32px;
 }
 .box h4 {
     color: var(--lime);
     text-align: center;
 }
 
-#costas {
-    display: flex;
-    justify-content: space-around;
-}
-#costas div {
-    position: relative;
-    width: 45%;
-}
-#costas div p {
-    width: 100%;
-}
-.sliding-box {
-    position: absolute;
-    left: 100vw;
-    width: calc(100% - 128px);
+#grange h1 {
     margin-top: 64px;
-    transition: left 0.2s ease-in-out;
 }
-.sliding-box p {
-    font-size: 1vw;
-    width: calc(50% - 128px);
+
+.simple-list {
     margin: auto;
-    padding-top: 16px;
+    text-align: center;
 }
-.sliding-box--left {
-    left: calc(-100vw - 64px)
-}
-.sliding-box--active {
-    left: 64px;
+.simple-list div h3,
+.simple-list div h5 {
+    display: inline-block;
 }
 
 .list div {
