@@ -17,11 +17,15 @@ body p {
     font-size: 2.5vmin;
 }
 #nav-bar {
+    display: flex;
+    flex-direction: column;
     width: 100px;
     height: 100vh;
     position: fixed;
     background-color: var(--gray);
     z-index: 1;
+    color: var(--purple);
+    text-align: center;
 }
 #nav-bar a {
     display: block;
@@ -46,6 +50,15 @@ body p {
     max-height: 30px;
     max-width: 30px;
 }
+#nav-bar h6 {
+    max-width: 75px;
+    margin: auto;
+}
+#tiny-icons {
+    position: absolute;
+    bottom: 0;
+}
+
 .active {
     background-color: var(--lime) !important;
     z-index: 10;
@@ -235,17 +248,18 @@ body p {
 #work-next {
     right: 0
 }
-#email:hover {
+.link:hover {
     color: var(--lime);
     cursor: pointer;
 }
 
 @media screen {
-    @media (max-width: 1000px) {
+    @media (max-width: 1080px) {
         #nav-bar {
             width: 100vw;
             height: 75px;
             top: 0;
+            flex-direction: row;
         }
         #nav-bar a {
             display: inline-block;
@@ -264,13 +278,16 @@ body p {
             height: calc(100vh - 75px);
             margin-top: 75px;
             margin-left: 0;
+            left: 0;
+        }
+        .section #img-container {
+            height: calc(100vh - 75px);
         }
 
         #about-me-container {
             flex-direction: column;
         }
         .box {
-            flex-basis: 100%;
             padding-top: 32px;
         }
         .sliding-box {
