@@ -65,6 +65,10 @@ Object.values(nav).forEach(navElem => {
 
 })
 
+document.getElementById('email').onclick = (e) => {
+    window.open("mailto:cal.a.williams@hotmail.com");
+};
+
 function init() {
     textRotation();
 }

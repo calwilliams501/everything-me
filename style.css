@@ -235,6 +235,10 @@ body p {
 #work-next {
     right: 0
 }
+#email:hover {
+    color: var(--lime);
+    cursor: pointer;
+}
 
 @media screen {
     @media (max-width: 1000px) {
