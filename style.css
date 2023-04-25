@@ -132,6 +132,9 @@ body p {
     padding: 32px 32px 0 32px;
     align-content: center;
 }
+.container .container {
+    padding: unset;
+}
 .flex-box {
     margin: auto;
 }
@@ -157,6 +160,7 @@ body p {
     text-align: center;
 }
 .outer-box {
+    padding-top: 16px;
     width: 100%;
 }
 .outer-box div {
