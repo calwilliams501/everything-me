@@ -1,26 +1,32 @@
-const nav = {
+const heading = {
     home: {
         button: document.getElementById('nav-home'),
+        section: document.getElementById('section-home'),
         coords: 0
     },
     about: {
         button: document.getElementById('nav-about'),
+        section: document.getElementById('section-about'),
         coords: window.innerHeight
     },
     skills: {
         button: document.getElementById('nav-skills'),
+        section: document.getElementById('section-skills'),
         coords: window.innerHeight * 2
     },
     work: {
         button: document.getElementById('nav-work'),
+        section: document.getElementById('section-work'),
         coords: window.innerHeight * 3
     },
     edu: {
         button: document.getElementById('nav-edu'),
+        section: document.getElementById('section-edu'),
         coords: window.innerHeight * 4
     },
     contact: {
         button: document.getElementById('nav-contact'),
+        section: document.getElementById('section-contact'),
         coords: window.innerHeight * 5
     }
 };
@@ -53,7 +59,7 @@ window.onbeforeunload = () => {
 
 };
 
-Object.values(nav).forEach(navElem => {
+Object.values(heading).forEach(navElem => {
 
     navElem.button.onclick = () => {
         window.scroll({
@@ -69,11 +75,11 @@ document.getElementById('email').onclick = (e) => window.open("mailto:cal.a.will
 document.getElementById('linkedin').onclick = (e) => window.open("https://www.linkedin.com/in/cal-a-williams/");
 
 function init() {
-    textRotation();
-    skillDates();
+    setTextRotation();
+    setSkillDates();
 }
 
-function textRotation() {
+function setTextRotation() {
 
     setInterval( () => {
 
@@ -108,18 +114,27 @@ function moveSDText() {
 
 function setActiveNavButton(button) {
 
-    Object.values(nav).forEach(it => {
+    if (button.classList.contains('active')) return scrollActiveSectionToTop();
+
+    Object.values(heading).forEach(it => {
         it.button.classList.remove('active')
     })
     button.classList.add('active');
 
 }
 
-function skillDates() {
+function scrollActiveSectionToTop() {
+
+    Object.values(heading).find((o) => o.button.classList.contains('active')).section.scroll({
+        top: 0,
+        behavior: 'smooth'
+    });
+
+}
+
+function setSkillDates() {
 
     const date = new Date();
-
-    console.log(date.getFullYear());
 
     Object.values(document.getElementById('skills-container').querySelectorAll('h4')).forEach(it => {
 
