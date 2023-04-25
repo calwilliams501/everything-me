@@ -71,6 +71,7 @@ document.getElementById('email').onclick = (e) => {
 
 function init() {
     textRotation();
+    skillDates();
 }
 
 function textRotation() {
@@ -112,5 +113,19 @@ function setActiveNavButton(button) {
         it.button.classList.remove('active')
     })
     button.classList.add('active');
+
+}
+
+function skillDates() {
+
+    const date = new Date();
+
+    console.log(date.getFullYear());
+
+    Object.values(document.getElementById('skills-container').querySelectorAll('h4')).forEach(it => {
+
+        it.textContent += ` / ${(date.getFullYear() - Number(it.textContent)).toString()} years experience`;
+
+    });
 
 }
